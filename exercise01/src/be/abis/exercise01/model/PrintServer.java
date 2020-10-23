@@ -1,13 +1,17 @@
 package be.abis.exercise01.model;
 
-public class PrintServer extends Node {
+public class PrintServer extends Node implements PrintingStrategy {
+
+	private PrintingStrategy printingStrategy;
 
 	public PrintServer(String string) {
 	}
+
+
 	@Override
 	public void receive(Packet packet){
-		if (packet.destinationAddress.equals(this.getAddress())){
-			    this.print(packet)
+		if (packet.getDestinationAddress().equals(this.getAddress())){
+			    this.print(packet);
 		}  else {
      	        this.send(packet);
 	}

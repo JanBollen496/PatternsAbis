@@ -7,7 +7,8 @@ public class Node extends LanComponent {
 
 	@Override
 	public void receive(Packet packet ) {
-		super.receive(packet);
+		System.out.println("I am a Node , I transfert only");
+		this.send(packet);
 	}
 	public void send(Packet packet){
 		this.getNextComponent().receive(packet);
