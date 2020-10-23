@@ -12,6 +12,5 @@ public class Node extends LanComponent {
 	}
 	public void send(Packet packet){
 		this.getNextComponent().receive(packet);
-}
-
+	}
 }
