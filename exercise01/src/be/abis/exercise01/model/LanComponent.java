@@ -1,16 +1,14 @@
 package be.abis.exercise01.model;
 
 public abstract class LanComponent {
-	private String address;
 
+	private String address;
+	private LanComponent nextComponent;
 
 	public LanComponent() {	}
 
-	private LanComponent nextComponent;
-
 	public LanComponent(String address) {
 		this.address = address;
-		this.nextComponent = nextComponent;
 	}
 
 	public String getAddress() {
@@ -29,14 +27,8 @@ public abstract class LanComponent {
 		this.nextComponent = nextComponent;
 	}
 
-	public void send(Packet packet){
+	public abstract void send(Packet packet){}
 
-	}
-
-	public void recieve(Packet packet){
-         this.address=packet.getDestinationAddress();
-
-		 }
-	}
+	public abstract void receive(Packet packet){}
 
 }

@@ -1,4 +1,4 @@
-package be.abis.exercise.model;
+package be.abis.exercise00.model;
 
 public class Point  {
 	private String color;

@@ -1,8 +1,8 @@
 package be.abis.exercise01.model;
 
 public class Packet {
-	String destinationAddress;
-	String contents;
+	private String destinationAddress;
+	private String contents;
 
 	public Packet() {}
 

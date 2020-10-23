@@ -1,11 +1,11 @@
-package be.abis.exercise.test;
+package be.abis.exercise00.test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import be.abis.exercise.model.Circle;
-import be.abis.exercise.model.Rectangle;
-import be.abis.exercise.model.Shape;
+import be.abis.exercise00.model.Circle;
+import be.abis.exercise00.model.Rectangle;
+import be.abis.exercise00.model.Shape;
 
 public class Client {
 	public static void main(String[] args) {

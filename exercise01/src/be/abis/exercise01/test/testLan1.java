@@ -1,21 +1,36 @@
 package be.abis.exercise01.test;
 
-import be.abis.exercise1.model.LanComponent;
-import be.abis.exercise1.model.Node;
-import be.abis.exercise1.model.PrintServer;
-import be.abis.exercise1.model.WorkStation;
+import be.abis.exercise01.model.LanComponent;
+import be.abis.exercise01.model.Node;
+import be.abis.exercise01.model.Packet;
+import be.abis.exercise01.model.PrintServer;
+import be.abis.exercise01.model.WorkStation;
+
 
 public class testLan1 {
-	public WorkStation ws1 = new WorkStation("Workstation");
-	public Node n1 = new Node("node1");
-	public PrintServer ps1 = new PrintServer("Printserver1");
-	public Node n2 = new Node("node2");
-	public PrintServer ps2 = new PrintServer("Printserver2");
-	public Node n3 = new Node("node3");
-	public PrintServer ps3 = new PrintServer("Printserver3");
-	public Node n4 = new Node("node4");
-	public PrintServer ps4 = new PrintServer("Printserver4");
-	public LanComponent lanComponent;
+	public static void main(String[] args) {
 
-	ws1.
+
+	 LanComponent ws1 = new WorkStation("Workstation");
+	 LanComponent n1 = new Node("node1");
+	 LanComponent ps1 = new PrintServer("Printserver1");
+	 LanComponent n2 = new Node("node2");
+	 LanComponent ps2 = new PrintServer("Printserver2");
+	 LanComponent n3 = new Node("node3");
+	 LanComponent ps3 = new PrintServer("Printserver3");
+
+  ws1.setNextComponent(n1);
+  	n1.setNextComponent(ps1);
+    ps1.setNextComponent(n2);
+	n2.setNextComponent(ps2);
+	ps2.setNextComponent(n3);
+	n3.setNextComponent(ps3);
+	ps3.setNextComponent(ws1);
+
+
+	Packet p1 = new Packet("hallo","node2");
+
+	if (ws1 instanceof WorkStation)	{
+		((WorkStation)ws1).originate(p1);
+	}
 }

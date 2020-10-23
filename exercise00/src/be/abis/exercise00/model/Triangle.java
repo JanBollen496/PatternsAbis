@@ -1,4 +1,4 @@
-package be.abis.exercise.model;
+package be.abis.exercise00.model;
 
 public class Triangle extends Shape{
 	private double	height;

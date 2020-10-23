@@ -2,13 +2,21 @@ package be.abis.exercise01.model;
 
 public class PrintServer extends Node {
 
-	public PrintServer(String) {
+	public PrintServer(String string) {
 	}
-	public void receive(Packet){
-		this.recieve(Packet);
-	};
+	@Override
+	public void receive(Packet packet){
+		if (packet.destinationAddress.equals(this.getAddress())){
+			    this.print(packet)
+		}  else {
+     	        this.send(packet);
+	}
 
-	public void print(Packet){
-		System.out.println("print Package " + Packet);
+	public void print(Packet packet) {
+		System.out.println("print Package " + packet);
+	}
+		else
+			send(packet)
+
 	}
 }
